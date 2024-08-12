@@ -1,0 +1,82 @@
+{
+  "name": "Cat-Breed-Info-Api",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "Get all cats breeds",
+      "seq": 1,
+      "request": {
+        "url": "http://localhost:8081/api/v1/breeds",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "temperament",
+            "value": "Gentle",
+            "type": "query",
+            "enabled": false
+          },
+          {
+            "name": "origin",
+            "value": "Egypt",
+            "type": "query",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Get cat breed by id",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost:8081/api/v1/breeds/:id",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "id",
+            "value": "abys",
+            "type": "path",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Cat-Breed-Info-Api",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
