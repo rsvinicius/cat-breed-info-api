@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: cat-breed-info-api
+  datasource:
+    url: ${ENV_DATASOURCE_URL:jdbc:postgresql://localhost:5432/catbreedinfodb}
+    username: ${ENV_DATASOURCE_USERNAME:user}
+    password: ${ENV_DATASOURCE_PASSWORD:pwd}
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+
+api-key:
+  the-cat-api: ${ENV_THE_CAT_API_KEY}
+
