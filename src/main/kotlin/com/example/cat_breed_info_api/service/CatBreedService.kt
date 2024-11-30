@@ -8,12 +8,8 @@ import org.springframework.stereotype.Service
 
 @Service
 class CatBreedService(private val breedRepository: BreedRepository) {
-    fun getAllBreeds(
-        temperament: String?,
-        origin: String?
-    ): List<Breed> {
-        val filters = BreedSpecifications.withFilters(temperament, origin)
-        return breedRepository.findAll(filters)
+    fun getAllBreeds(specifications: BreedSpecifications): List<Breed> {
+        return breedRepository.findAll(specifications)
     }
 
     fun getBreedById(id: String): Breed {
