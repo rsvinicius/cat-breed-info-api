@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface BreedImageRepository : JpaRepository<BreedImage, Long>
+interface BreedImageRepository : JpaRepository<BreedImage, Long> {
+    fun findAllByBreedId(breedId: String): List<BreedImage>
+}

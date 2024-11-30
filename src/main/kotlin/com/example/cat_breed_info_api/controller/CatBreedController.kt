@@ -1,6 +1,6 @@
 package com.example.cat_breed_info_api.controller
 
-import com.example.cat_breed_info_api.model.entity.Breed
+import com.example.cat_breed_info_api.model.dto.BreedDto
 import com.example.cat_breed_info_api.repository.specification.BreedSpecifications
 import com.example.cat_breed_info_api.service.CatBreedService
 import org.springframework.web.bind.annotation.GetMapping
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/api/v1/breeds")
 class CatBreedController(private val catBreedService: CatBreedService) {
     @GetMapping
-    fun getAllBreeds(specifications: BreedSpecifications): List<Breed> {
+    fun getAllBreeds(specifications: BreedSpecifications): List<BreedDto> {
         return catBreedService.getAllBreeds(specifications)
     }
 
     @GetMapping("/{id}")
-    fun getBreedById(@PathVariable id: String): Breed {
+    fun getBreedById(@PathVariable id: String): BreedDto {
         return catBreedService.getBreedById(id)
     }
 }
