@@ -4,6 +4,7 @@ import com.example.cat_breed_info_api.client.TheCatApiClient
 import com.example.cat_breed_info_api.model.entity.BreedImage
 import com.example.cat_breed_info_api.repository.BreedImageRepository
 import com.example.cat_breed_info_api.repository.BreedRepository
+import mu.KotlinLogging
 import org.springframework.stereotype.Service
 
 private const val BREED_IMAGES_LIMIT = 3
@@ -14,9 +15,16 @@ class TheCatApiService(
     private val breedRepository: BreedRepository,
     private val breedImageRepository: BreedImageRepository
 ) {
+    private val logger = KotlinLogging.logger {}
+
     fun initializeData() {
+        logger.info { "initializeData: initializing database..." }
         if (breedRepository.count() == 0L) {
             saveBreeds()
+            logger.info { "initializeData: initialized database successfully!" }
+        } else {
+            logger.info { "initializeData: database already initialized..." }
+
         }
     }
 
