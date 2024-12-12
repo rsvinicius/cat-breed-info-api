@@ -21,10 +21,9 @@ class TheCatApiService(
         logger.info { "initializeData: initializing database..." }
         if (breedRepository.count() == 0L) {
             saveBreeds()
-            logger.info { "initializeData: initialized database successfully!" }
+            logger.info { "initializeData: database initialized successfully!" }
         } else {
             logger.info { "initializeData: database already initialized..." }
-
         }
     }
 

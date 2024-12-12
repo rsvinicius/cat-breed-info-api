@@ -15,4 +15,3 @@ spring:
 
 api-key:
   the-cat-api: ${ENV_THE_CAT_API_KEY}
-
